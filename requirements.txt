@@ -4,3 +4,4 @@ numpy
 joblib==1.2.0
 tensorflow==2.16.1
 matplotlib==3.8.0
+tensorrt==10.0.1
