@@ -226,7 +226,7 @@ def run_ml_app():
         st.subheader("학업성취도 예측결과")
 
         # Load Model 1
-        model_path1 = 'C:/Users/namch/OneDrive/문서/streamlit/models/model1.pkl'
+        model_path1 = '/models/model1.pkl'
         if os.path.exists(model_path1):
             with open(model_path1, 'rb') as f:
                 model1_serialized_loaded, model1_weights_loaded = joblib.load(f)
@@ -236,8 +236,8 @@ def run_ml_app():
             model1_loaded.set_weights(model1_weights_loaded)
 
             # Load scalers for Model 1
-            scaler_X_loaded = joblib.load('C:/Users/namch/OneDrive/문서/streamlit/models/scaler_X.pkl')
-            scaler_y_loaded = joblib.load('C:/Users/namch/OneDrive/문서/streamlit/models/scaler_y.pkl')
+            scaler_X_loaded = joblib.load('/models/scaler_X.pkl')
+            scaler_y_loaded = joblib.load('/models/scaler_y.pkl')
 
             # Prepare input data for Model 1
             input_data_model1 = {k: v for k, v in input_data.items() if k != 'MATACH'}
@@ -411,7 +411,7 @@ def run_ml_app():
         st.subheader("수학흥미도 예측결과")
 
         # Load Model 2
-        model_path2 = 'C:/Users/namch/OneDrive/문서/streamlit/models/model2.pkl'
+        model_path2 = '/models/model2.pkl'
         if os.path.exists(model_path2):
             with open(model_path2, 'rb') as f2:
                 model2_serialized_loaded, model2_weights_loaded = joblib.load(f2)
@@ -421,8 +421,8 @@ def run_ml_app():
             model2_loaded.set_weights(model2_weights_loaded)
 
             # Load scalers for Model 2
-            scaler_W_loaded = joblib.load('C:/Users/namch/OneDrive/문서/streamlit/models/scaler_W.pkl')
-            scaler_z_loaded = joblib.load('C:/Users/namch/OneDrive/문서/streamlit/models/scaler_z.pkl')
+            scaler_W_loaded = joblib.load('/models/scaler_W.pkl')
+            scaler_z_loaded = joblib.load('/models/scaler_z.pkl')
 
             # Prepare input data for Model 2
             input_data_model2 = {k: v for k, v in input_data.items() if k != 'SMATINT'}
