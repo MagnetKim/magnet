@@ -184,34 +184,34 @@ def run_ml_app():
             'TOVERADM': toveradm
         })
         
-        st.subheader("교사 발전")
+        st.subheader("교사 연수와 전문성 개발")
         # Teacher Development
         st.write("수학교과 내용에 대한 연수를 받은 적이 있는지 선택하세요.")
-        tpdmcp = st.slider('수학교과 내용에 대한 연수를 받은 적이 있다', 0, 1, 0)
+        tpdmcp = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학교과 내용에 대한 연수를 받을 계획이 있는지 선택하세요.")
-        tpdmdf = st.slider('수학교과 내용에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        tpdmdf = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학교육학에 대한 연수를 받은 적이 있는지 선택하세요.")
-        tpdmdp = st.slider('수학교육학에 대한 연수를 받은 적이 있다.', 0, 1, 0)
+        tpdmdp = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학교육학에 대한 연수를 받을 계획이 있는지 선택하세요.")
-        tpdmcf = st.slider('수학교육학에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        tpdmcf = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학교육과정에 대한 연수를 받은 적이 있는지 선택하세요.")
-        tpdmep = st.slider('수학교육과정에 대한 연수를 받은 적이 있다', 0, 1, 0)
+        tpdmep = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학교육과정에 대한 연수를 받을 계획이 있는지 선택하세요.")
-        tpdmef = st.slider('수학교육과정에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        tpdmef = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학 문제해결 역량에 대한 연수를 받은 적이 있는지 선택하세요.")
-        tpdsvp = st.slider('수학 문제해결 역량에 대한 연수를 받은 적이 있다', 0, 1, 0)
+        tpdsvp = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("수학 문제해결 역량에 대한 연수를 받을 계획이 있는지 선택하세요.")
-        tpdsvf = st.slider('수학 문제해결 역량에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        tpdsvf = st.slider('1: 있음, 0: 없음', 0, 1, 0)
         
         st.write("전문성 향상에 투자하는 시간을 선택하세요.")
-        tpdtime = st.slider('전문성 향상에 투자하는 시간은 어느 정도인가요?', 1, 5, 0)
+        tpdtime = st.slider('1: 있음, 0: 없음', 1, 5, 0)
         
         input_data_others.update({
             'TPDMCP': tpdmcp,
@@ -228,16 +228,16 @@ def run_ml_app():
         st.subheader("학생 학습")
         # Student Learning
         st.write("학급 내 학생 수를 선택하세요.")
-        tstupc = st.slider('학급 내 학생 수는 몇 명인가요?', 1, 50, 28)
+        tstupc = st.slider('인원수 명', 1, 50, 28)
         
         st.write("수학지식이 부족한 학생 비율을 선택하세요.")
-        tlackk = st.slider('수학지식이 부족한 학생은 어느 정도인가요?', 1, 3, 1)
+        tlackk = st.slider('1: 많음, 2: 약간, 3: 적음', 1, 3, 1)
         
         st.write("수학 흥미가 부족한 학생 비율을 선택하세요.")
-        tlacki = st.slider('수학 흥미가 부족한 학생은 어느 정도인가요?', 1, 3, 1)
+        tlacki = st.slider('1: 많음, 2: 약간, 3: 적음', 1, 3, 1)
         
         st.write("1주일에 수학 시간을 선택하세요.")
-        tmtime = st.slider('1주일에 수학 시간은 몇 분인가요?', 1, 1800, 700)
+        tmtime = st.slider('분 기준', 1, 1800, 700)
         
         input_data_others.update({
             'TSTUPC': tstupc,
@@ -248,71 +248,71 @@ def run_ml_app():
         
         st.subheader("학생들이 배운 교과내용")
         # Mathematics Curriculum
-        st.write("음수계산을 선택하세요.")
-        tprik1 = st.slider('음수계산', 0, 2, 0)
+        st.write("음수계산")
+        tprik1 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("분수와 소수를 선택하세요.")
-        tprik2 = st.slider('분수와 소수', 0, 2, 0)
+        st.write("분수와 소수")
+        tprik2 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("비율과 퍼센트를 선택하세요.")
-        tprik3 = st.slider('비율과 퍼센트', 0, 2, 0)
+        st.write("비율과 퍼센트")
+        tprik3 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("대수의 표현을 선택하세요.")
-        tprik4 = st.slider('대수의 표현', 0, 2, 0)
+        st.write("대수의 표현")
+        tprik4 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("단순 선형 방정식을 선택하세요.")
-        tprik5 = st.slider('단순 선형 방정식', 0, 2, 0)
+        st.write("단순 선형 방정식")
+        tprik5 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("단순 선형 부등식을 선택하세요.")
-        tprik6 = st.slider('단순 선형 부등식', 0, 2, 0)
+        st.write("단순 선형 부등식")
+        tprik6 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("연립방정식을 선택하세요.")
-        tprik7 = st.slider('연립방정식', 0, 2, 0)
+        st.write("연립방정식")
+        tprik7 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("선형/2차 함수 표현을 선택하세요.")
-        tprik8 = st.slider('선형/2차 함수 표현', 0, 2, 0)
+        st.write("선형/2차 함수 표현")
+        tprik8 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("함수의 특성을 선택하세요.")
-        tprik9 = st.slider('함수의 특성', 0, 2, 0)
+        st.write("함수의 특성")
+        tprik9 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("패턴을 표현하는 방법을 선택하세요.")
-        tprik10 = st.slider('패턴을 표현하는 방법', 0, 2, 0)
+        st.write("패턴을 표현하는 방법")
+        tprik10 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("각, 평형 모양에 대한 특성을 선택하세요.")
-        tprik11 = st.slider('각, 평형 모양에 대한 특성', 0, 2, 0)
+        st.write("각, 평형 모양에 대한 특성")
+        tprik11 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("지름, 둘레, 면적을 선택하세요.")
-        tprik12 = st.slider('지름, 둘레, 면적', 0, 2, 0)
+        st.write("지름, 둘레, 면적")
+        tprik12 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("피타고라스 정리를 선택하세요.")
-        tprik13 = st.slider('피타고라스 정리', 0, 2, 0)
+        st.write("피타고라스 정리")
+        tprik13 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("반사, 회전을 선택하세요.")
-        tprik14 = st.slider('반사, 회전', 0, 2, 0)
+        st.write("반사, 회전")
+        tprik14 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("합동과 닮음을 선택하세요.")
-        tprik15 = st.slider('합동과 닮음', 0, 2, 0)
+        st.write("합동과 닮음")
+        tprik15 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("3차원 도형을 선택하세요.")
-        tprik16 = st.slider('3차원 도형', 0, 2, 0)
+        st.write("3차원 도형")
+        tprik16 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("자료 해석법을 선택하세요.")
-        tprik17 = st.slider('자료 해석법', 0, 2, 0)
+        st.write("자료 해석법")
+        tprik17 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("자료 수집을 위한 절차를 선택하세요.")
-        tprik18 = st.slider('자료 수집을 위한 절차', 0, 2, 0)
+        st.write("자료 수집을 위한 절차")
+        tprik18 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("자료의 조직법을 선택하세요.")
-        tprik19 = st.slider('자료의 조직법', 0, 2, 0)
+        st.write("자료의 조직법")
+        tprik19 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("자료 요약통계를 선택하세요.")
-        tprik20 = st.slider('자료 요약통계', 0, 2, 0)
+        st.write("자료 요약통계")
+        tprik20 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("단순한 사건의 확률을 선택하세요.")
-        tprik21 = st.slider('단순한 사건의 확률', 0, 2, 0)
+        st.write("단순한 사건의 확률")
+        tprik21 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
-        st.write("다양한 사건의 확률을 선택하세요.")
-        tprik22 = st.slider('다양한 사건의 확률', 0, 2, 0)
+        st.write("다양한 사건의 확률")
+        tprik22 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0)
         
         input_data_others.update({
             'TPRIK1': tprik1,
