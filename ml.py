@@ -224,6 +224,13 @@ def run_ml_app():
 
     with col3:
         st.subheader("학업성취도 예측결과")
+        st.markdown(
+                """
+                <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
+                    📝 예측결과 해석 주의!
+                </div>
+                """, unsafe_allow_html=True
+            )
 
         # Load Model 1
         model_path1 = 'models/model1.pkl'
@@ -287,14 +294,6 @@ def run_ml_app():
         else:
             st.write("모델 1 파일이 존재하지 않습니다. 모델 1 파일을 확인해주세요.")
             # Variables to optimize
-
-            st.markdown(
-                """
-                <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
-                    📝 예측결과 해석 주의!
-                </div>
-                """, unsafe_allow_html=True
-            )
 
         variables_to_optimize = [
             'TINSSTG1', 'TINSSTG2', 'TINSSTG3', 'TINSSTG4', 'TINSSTG5', 'TINSSTG6', 'TINSSTG7',
