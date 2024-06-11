@@ -114,7 +114,7 @@ def run_ml_app():
             'STCHRCAP': stchrcap
         }
 
-
+        st.subheader("📒교사 정보")
                # Teacher Information
         st.write("🟡교사경력을 선택하세요.")
         tcareer = st.slider('총 경력 연수', 1, 60, 1, key='TCAREER')
@@ -159,7 +159,7 @@ def run_ml_app():
             'TSTURES': tstures
         })
         
-        st.subheader("교사 만족도")
+        st.subheader("🥰교사 만족도")
         # Teacher Satisfaction
         st.write("🟠선생님들간의 협력 정도를 선택하세요.")
         tcollab = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1, key='TCOLLAB')
@@ -184,7 +184,7 @@ def run_ml_app():
             'TOVERADM': toveradm
         })
         
-        st.subheader("교사 연수와 전문성 개발")
+        st.subheader("🏃‍♂️교사 연수와 전문성 개발")
         # Teacher Development
         st.write("🟡수학교과 내용에 대한 연수를 받은 적이 있는지 선택하세요.")
         tpdmcp = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMCP')
@@ -225,7 +225,7 @@ def run_ml_app():
             'TPDTIME': tpdtime
         })
         
-        st.subheader("학생 학습")
+        st.subheader("🪑학습환경")
         # Student Learning
         st.write("🟠학급 내 학생 수를 선택하세요.")
         tstupc = st.slider('인원수 명', 1, 50, 28, key='TSTUPC')
@@ -246,7 +246,7 @@ def run_ml_app():
             'TMTIME': tmtime
         })
         
-        st.subheader("학생들이 배운 교과내용")
+        st.subheader("📚학생들이 배운 교과내용")
         # Mathematics Curriculum
         st.write("🟡음수계산")
         tprik1 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK1')
