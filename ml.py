@@ -59,46 +59,46 @@ def run_ml_app():
         # User input sliders for 기타 변수
         input_data_others = {}
         
-        st.subheader("학교 정보")
+        st.subheader("🏫학교 정보")
         
         # Academic Achievement
-        st.write("학업성취도 수준을 선택하세요.")
+        st.write("🟠학업성취도 수준을 선택하세요.")
         matach = st.slider('625점 이상: ‘수월’, 550점: ‘우수’, 475점: ‘보통’, 400점: ‘기초’', 0, 1000, 500, key='MATACH')
         
         # Non-Korean Speaking Students Ratio
-        st.write("한국어가 모국어가 아닌 학생 비율을 선택하세요.")
+        st.write("🟠한국어가 모국어가 아닌 학생 비율을 선택하세요.")
         schkor = st.slider('1: 10% 미만, 2: 10-25%, 3:25%-50%, 4:50-75%, 5: 75% 이상', 1, 5, 1, key='SCHKOR')
         
         # Population Around School
-        st.write("학교 주변 인구를 선택하세요.")
+        st.write("🟠학교 주변 인구를 선택하세요.")
         schpop = st.slider('1: 3천명 이하, 2: 3천-1.5만, 3: 1.5만-3만, 4: 3만-5만, 5: 5만-10만, 6: 10만-50만, 7: 50만 이상', 1, 7, 1, key='SCHPOP')
         
         # Economically Challenged Students Ratio
-        st.write("경제적으로 어려운 학생 비율을 선택하세요.")
+        st.write("🟠경제적으로 어려운 학생 비율을 선택하세요.")
         schpoor = st.slider('1: 0-10%, 2: 10-25%, 3: 25-50%, 4: 50%-', 1, 5, 1, key='SCHPOOR')
         
         # Gender Ratio of Students
-        st.write("학생 성별 비율을 선택하세요.")
+        st.write("🟠학생 성별 비율을 선택하세요.")
         sgender = st.slider('0: 남자만, 반반: 0.5, 1: 여자만', 0.0, 1.0, 1.0, step=0.1, key='SGENDER')
         
         # Average Education Level of Guardians
-        st.write("전반적인 학생들의 보호자 평균 학력을 선택하세요.")
+        st.write("🟠전반적인 학생들의 보호자 평균 학력을 선택하세요.")
         sgaredu = st.slider('1: 초등이하, 2:중졸, 3:고졸, 4-5: 전문대, 6: 4년제졸, 7-8: 석박사', 1, 8, 5, step=1, key='SGAREDU')
         
         # Educational Aspirations of Students
-        st.write("학생들의 평균적인 교육 포부 수준을 선택하세요.")
+        st.write("🟠학생들의 평균적인 교육 포부 수준을 선택하세요.")
         seduaspr = st.slider('1:중졸, 2:고졸, 3-4:전문대졸, 5:학사, 6:대학원', 1, 6, 1, key='SEDUASPR')
         
         # Interest in Mathematics
-        st.write("학생들의 수학 흥미 수준을을 선택하세요.")
+        st.write("🟠학생들의 수학 흥미 수준을을 선택하세요.")
         smatint = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1, key='SMATINT')
         
         # Self-Efficacy in Mathematics
-        st.write("학생들의 수학 효능/자신감 수준을 선택하세요.")
+        st.write("🟠학생들의 수학 효능/자신감 수준을 선택하세요.")
         smateff = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1, key='SMATEFF')
         
         # Perception of Teacher's Capability
-        st.write("학생들이 교사 능력에 대해 어떻게 인식하는지 선택하세요.")
+        st.write("🟠학생들이 교사 능력에 대해 어떻게 인식하는지 선택하세요.")
         stchrcap = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1, key='STCHRCAP')
         
         input_data_others = {
@@ -116,34 +116,34 @@ def run_ml_app():
 
 
                # Teacher Information
-        st.write("교사경력을 선택하세요.")
+        st.write("🟡교사경력을 선택하세요.")
         tcareer = st.slider('총 경력 연수', 1, 60, 1, key='TCAREER')
         
-        st.write("교사성별을 선택하세요.")
+        st.write("🟡교사성별을 선택하세요.")
         tgender = st.slider('남자:1, 여자:0', 0, 1, 0, key='TGENDER')
         
-        st.write("교사나이를 선택하세요.")
+        st.write("🟡교사 연령을 선택하세요.")
         tage = st.slider('만 기준', 20, 70, 20, key='TAGE')
         
-        st.write("수학과전공 여부를 선택하세요.")
+        st.write("🟡수학과전공 여부를 선택하세요.")
         tmajmath = st.slider('수학과 전공이면 1', 0, 1, 0, key='TMAJMATH')
         
-        st.write("수학교육과전공 여부를 선택하세요.")
+        st.write("🟡수학교육과전공 여부를 선택하세요.")
         tmajme = st.slider('수학교육과전공이면 1', 0, 1, 1, key='TMAJME')
         
-        st.write("학생 공부에 대한 교사의 기대를 선택하세요.")
+        st.write("🟡학생 공부에 대한 교사의 기대를 입력하세요.")
         tstutexp = st.slider('1:매우 낮음 - 5:매우 높음', 1, 5, 1, key='TSTUTEXP')
         
-        st.write("학생 공부에 대한 학부모의 기대를 선택하세요.")
+        st.write("🟡학생 공부에 대한 학부모의 기대를 선택하세요.")
         tstupexp = st.slider('1:매우 낮음 - 5:매우 높음', 1, 5, 1, key='TSTUPEXP')
         
-        st.write("학생들은 학교에서 잘 지내려고 한다")
+        st.write("🟡학생들은 학교에서 잘 지내려고 한다")
         tstusexp = st.slider('1:매우 아니다 - 5:매우 그렇다', 1, 5, 1, key='TSTUSEXP')
         
-        st.write("선생님이 생각하시는 학생들의 역량을 선택하세요.")
+        st.write("🟡선생님이 생각하시는 학생들의 역량을 선택하세요.")
         tstucap = st.slider('1:매우 낮음 - 5:매우 높음', 1, 5, 1, key='TSTUCAP')
         
-        st.write("학생들은 교사들을 존중하나요?")
+        st.write("🟡학생들은 교사들을 존중하나요?")
         tstures = st.slider('1:매우 아니다 - 5:매우 그렇다', 1, 5, 1, key='TSTURES')
         
         input_data_others.update({
@@ -161,19 +161,19 @@ def run_ml_app():
         
         st.subheader("교사 만족도")
         # Teacher Satisfaction
-        st.write("선생님들간의 협력 정도를 선택하세요.")
+        st.write("🟠선생님들간의 협력 정도를 선택하세요.")
         tcollab = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1, key='TCOLLAB')
         
-        st.write("선생님의 직무만족도를 선택하세요.")
+        st.write("🟠선생님의 직무만족도를 선택하세요.")
         tsatis = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1, key='TSATIS')
         
-        st.write("선생님의 직무에 대한 열정을 선택하세요.")
+        st.write("🟠선생님의 직무에 대한 열정을 선택하세요.")
         tpassion = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1, key='TPASSION')
         
-        st.write("선생님은 담당하는 학생이 너무 많다고 생각하시나요?")
+        st.write("🟠선생님은 담당하는 학생이 너무 많다고 생각하시나요?")
         tcrwd = st.slider('1: 전혀 비동의 - 4: 매우 동의', 1, 4, 1, key='TCRWD')
         
-        st.write("선생님의 행정업무양이 많다고 생각하시나요?")
+        st.write("🟠선생님의 행정업무양이 많다고 생각하시나요?")
         toveradm = st.slider('1: 전혀 비동의 - 4: 매우 동의', 1, 4, 1, key='TOVERADM')
         
         input_data_others.update({
@@ -186,31 +186,31 @@ def run_ml_app():
         
         st.subheader("교사 연수와 전문성 개발")
         # Teacher Development
-        st.write("수학교과 내용에 대한 연수를 받은 적이 있는지 선택하세요.")
+        st.write("🟡수학교과 내용에 대한 연수를 받은 적이 있는지 선택하세요.")
         tpdmcp = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMCP')
         
-        st.write("수학교과 내용에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        st.write("🟡수학교과 내용에 대한 연수를 받을 계획이 있는지 선택하세요.")
         tpdmdf = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMCF')
         
-        st.write("수학교육학에 대한 연수를 받은 적이 있는지 선택하세요.")
+        st.write("🟡수학교육학에 대한 연수를 받은 적이 있는지 선택하세요.")
         tpdmdp = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMDP')
         
-        st.write("수학교육학에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        st.write("🟡수학교육학에 대한 연수를 받을 계획이 있는지 선택하세요.")
         tpdmcf = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMDF')
         
-        st.write("수학교육과정에 대한 연수를 받은 적이 있는지 선택하세요.")
+        st.write("🟡수학교육과정에 대한 연수를 받은 적이 있는지 선택하세요.")
         tpdmep = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMEP')
         
-        st.write("수학교육과정에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        st.write("🟡수학교육과정에 대한 연수를 받을 계획이 있는지 선택하세요.")
         tpdmef = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMEF')
         
-        st.write("수학 문제해결 역량에 대한 연수를 받은 적이 있는지 선택하세요.")
+        st.write("🟡수학 문제해결 역량에 대한 연수를 받은 적이 있는지 선택하세요.")
         tpdsvp = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDSVP')
         
-        st.write("수학 문제해결 역량에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        st.write("🟡수학 문제해결 역량에 대한 연수를 받을 계획이 있는지 선택하세요.")
         tpdsvf = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDSVF')
         
-        st.write("전문성 향상에 투자하는 시간을 선택하세요.")
+        st.write("🟡전문성 향상에 투자하는 시간을 선택하세요.")
         tpdtime = st.slider('1: 있음, 0: 없음', 1, 5, 0, key='TPDTIME')
         
         input_data_others.update({
@@ -227,16 +227,16 @@ def run_ml_app():
         
         st.subheader("학생 학습")
         # Student Learning
-        st.write("학급 내 학생 수를 선택하세요.")
+        st.write("🟠학급 내 학생 수를 선택하세요.")
         tstupc = st.slider('인원수 명', 1, 50, 28, key='TSTUPC')
         
-        st.write("수학지식이 부족한 학생 비율을 선택하세요.")
+        st.write("🟠수학지식이 부족한 학생 비율을 선택하세요.")
         tlackk = st.slider('1: 많음, 2: 약간, 3: 적음', 1, 3, 1, key='TLACKK')
         
-        st.write("수학 흥미가 부족한 학생 비율을 선택하세요.")
+        st.write("🟠수학 흥미가 부족한 학생 비율을 선택하세요.")
         tlacki = st.slider('1: 많음, 2: 약간, 3: 적음', 1, 3, 1, key='TLACKI')
         
-        st.write("1주일에 수학 시간을 선택하세요.")
+        st.write("🟠1주일에 수학 시간을 선택하세요.")
         tmtime = st.slider('분 기준', 1, 1800, 700, key='TMTIME')
         
         input_data_others.update({
@@ -248,70 +248,70 @@ def run_ml_app():
         
         st.subheader("학생들이 배운 교과내용")
         # Mathematics Curriculum
-        st.write("음수계산")
+        st.write("🟡음수계산")
         tprik1 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK1')
         
-        st.write("분수와 소수")
+        st.write("🟡분수와 소수")
         tprik2 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK2')
         
-        st.write("비율과 퍼센트")
+        st.write("🟡비율과 퍼센트")
         tprik3 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK3')
         
-        st.write("대수의 표현")
+        st.write("🟡대수의 표현")
         tprik4 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK4')
         
-        st.write("단순 선형 방정식")
+        st.write("🟡단순 선형 방정식")
         tprik5 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK5')
         
-        st.write("단순 선형 부등식")
+        st.write("🟡단순 선형 부등식")
         tprik6 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK6')
         
-        st.write("연립방정식")
+        st.write("🟡연립방정식")
         tprik7 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK7')
         
-        st.write("선형/2차 함수 표현")
+        st.write("🟡선형/2차 함수 표현")
         tprik8 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK8')
         
-        st.write("함수의 특성")
+        st.write("🟡함수의 특성")
         tprik9 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK9')
         
-        st.write("패턴을 표현하는 방법")
+        st.write("🟡패턴을 표현하는 방법")
         tprik10 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK10')
         
-        st.write("각, 평형 모양에 대한 특성")
+        st.write("🟡각, 평형 모양에 대한 특성")
         tprik11 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK11')
         
-        st.write("지름, 둘레, 면적")
+        st.write("🟡지름, 둘레, 면적")
         tprik12 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK12')
         
-        st.write("피타고라스 정리")
+        st.write("🟡피타고라스 정리")
         tprik13 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK13')
         
-        st.write("반사, 회전")
+        st.write("🟡반사, 회전")
         tprik14 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK14')
         
-        st.write("합동과 닮음")
+        st.write("🟡합동과 닮음")
         tprik15 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK15')
         
-        st.write("3차원 도형")
+        st.write("🟡3차원 도형")
         tprik16 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK16')
         
-        st.write("자료 해석법")
+        st.write("🟡자료 해석법")
         tprik17 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK17')
         
-        st.write("자료 수집을 위한 절차")
+        st.write("🟡자료 수집을 위한 절차")
         tprik18 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK18')
         
-        st.write("자료의 조직법")
+        st.write("🟡자료의 조직법")
         tprik19 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK19')
         
-        st.write("자료 요약통계")
+        st.write("🟡자료 요약통계")
         tprik20 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK20')
         
-        st.write("단순한 사건의 확률")
+        st.write("🟡단순한 사건의 확률")
         tprik21 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK21')
         
-        st.write("다양한 사건의 확률")
+        st.write("🟡다양한 사건의 확률")
         tprik22 = st.slider('0: 아직 안 배움, 1: 작년에 배움, 2: 올해 배움', 0, 2, 0, key='TPRIK22')
         
         input_data_others.update({
@@ -355,95 +355,95 @@ def run_ml_app():
             st.write(description)
             return slider_value
 
-        st.subheader("교수 전략")
+        st.subheader("🧑‍🏫가르치는 방법")
 
-        st.write("실생활과 연결시켜 설명")
+        st.write("🟠실생활과 연결시켜 설명")
         tinsstg1 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG1')
         
-        st.write("답에 대해 설명")
+        st.write("🟠답에 대해 설명")
         tinsstg2 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG2')
         
-        st.write("도전적인 활동을 제공")
+        st.write("🟠도전적인 활동을 제공")
         tinsstg3 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG3')
         
-        st.write("반 친구들과 토론")
+        st.write("🟠반 친구들과 토론")
         tinsstg4 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG4')
         
-        st.write("기존 지식의 연계")
+        st.write("🟠기존 지식의 연계")
         tinsstg5 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG5')
         
-        st.write("문제해결과정 설명")
+        st.write("🟠문제해결과정 설명")
         tinsstg6 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG6')
         
-        st.write("학생들의 생각을 표현하도록 함")
+        st.write("🟠학생들의 생각을 표현하도록 함")
         tinsstg7 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG7')
         
-        st.subheader("학생에게 요청하는 내용")
+        st.subheader("🎒학생에게 수업에서 요청하는 것")
         
-        st.write("수학 내용에 대한 교사의 설명을 듣도록 함")
+        st.write("🟠수학 내용에 대한 교사의 설명을 듣도록 함")
         tinsask1 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK1')
         
-        st.write("교사의 문제풀이 방법을 듣도록 함")
+        st.write("🟠교사의 문제풀이 방법을 듣도록 함")
         tinsask2 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK2')
         
-        st.write("법칙, 절차, 사실을 외우도록 함")
+        st.write("🟠법칙, 절차, 사실을 외우도록 함")
         tinsask3 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK3')
         
-        st.write("스스로 절차를 연습해보도록 함")
+        st.write("🟠스스로 절차를 연습해보도록 함")
         tinsask4 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK4')
         
-        st.write("새로운 문제에 스스로 적용해보도록 함")
+        st.write("🟠새로운 문제에 스스로 적용해보도록 함")
         tinsask5 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK5')
         
-        st.write("교사의 지도 아래 반 전체가 문제를 풀어보도록 함")
+        st.write("🟠교사의 지도 아래 반 전체가 문제를 풀어보도록 함")
         tinsask6 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK6')
         
-        st.write("다양한 능력의 학생들끼리 협업하게 함")
+        st.write("🟠다양한 능력의 학생들끼리 협업하게 함")
         tinsask7 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK7')
         
-        st.write("비슷한 능력의 학생들끼리 협업하게 함")
+        st.write("🟠비슷한 능력의 학생들끼리 협업하게 함")
         tinsask8 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK8')
         
-        st.subheader("과제 빈도 및 시간")
+        st.subheader("⏰과제 빈도 및 시간")
         
-        st.write("과제를 얼마나 자주 내주십니까?")
+        st.write("🟠과제를 얼마나 자주 내주십니까?")
         thwfrq = st.slider('1:안 냄, 2: 주 1회 이하, 3: 주 1-2회, 4: 주 3-4회, 5: 매일', 1, 5, 1, key='THWFRQ')
         
-        st.write("과제에 소요되는 시간은 어느 수준입니까?")
+        st.write("🟠과제에 소요되는 시간은 어느 수준입니까?")
         thwtime = st.slider('1: 15분 미만, 2: 15-30분, 3: 30-60분, 4: 60-90분, 5: 90분 이상', 1, 5, 1, key='THWTIME')
         
-        st.subheader("과제 전략")
+        st.subheader("📖과제 전략")
         
-        st.write("과제에 대한 피드백을 줌")
+        st.write("🟠과제에 대한 피드백을 줌")
         thwstg1 = st.slider('1:거의 안함, 2: 가끔, 3: 거의 항상', 1, 3, 1, key='THWSTG1')
         
-        st.write("과제를 스스로 고치도록 함")
+        st.write("🟠과제를 스스로 고치도록 함")
         thwstg2 = st.slider('1:거의 안함, 2: 가끔, 3: 거의 항상', 1, 3, 1, key='THWSTG2')
         
-        st.write("수업에서 과제에 대한 토론을 함")
+        st.write("🟠수업에서 과제에 대한 토론을 함")
         thwstg3 = st.slider('1:거의 안함, 2: 가끔, 3: 거의 항상', 1, 3, 1, key='THWSTG3')
         
-        st.write("과제가 완료되었는지 모니터링함")
+        st.write("🟠과제가 완료되었는지 모니터링함")
         thwstg4 = st.slider('1:거의 안함, 2: 가끔, 3: 거의 항상', 1, 3, 1, key='THWSTG4')
         
-        st.write("과제를 성적에 활용함")
+        st.write("🟠과제를 성적에 활용함")
         thwstg5 = st.slider('1:거의 안함, 2: 가끔, 3: 거의 항상', 1, 3, 1, key='THWSTG5')
         
-        st.subheader("이외 중요한 교수학습 전략")
+        st.subheader("💯평가 전략")
         
-        st.write("학생을 관찰함")
+        st.write("🟠학생을 관찰함")
         thwstg6 = st.slider('1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함', 1, 3, 1, key='THWSTG6')
         
-        st.write("학생에게 지속적으로 질문함")
+        st.write("🟠학생에게 지속적으로 질문함")
         thwstg7 = st.slider('1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함', 1, 3, 1, key='THWSTG7')
         
-        st.write("짧은 형태의 평가를 활용함")
+        st.write("🟠짧은 형태의 평가를 활용함")
         thwstg8 = st.slider('1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함', 1, 3, 1, key='THWSTG8')
         
-        st.write("긴 형태의 평가를 활용함")
+        st.write("🟠긴 형태의 평가를 활용함")
         thwstg9 = st.slider('1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함', 1, 3, 1, key='THWSTG9')
         
-        st.write("장기간의 프로젝트를 부여함")
+        st.write("🟠장기간의 프로젝트를 부여함")
         thwstg10 = st.slider('1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함', 1, 3, 1, key='THWSTG10')
         
         input_data_details = {
