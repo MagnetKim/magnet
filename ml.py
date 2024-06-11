@@ -713,6 +713,42 @@ def run_ml_app():
             # 인덱스를 가리고 결과 출력
             st.dataframe(filtered_results_df_model1.reset_index(drop=True))
 
+            st.markdown(
+                    """
+                    <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
+                        위 표에서는 현 조건에서 가장 좋은 점수를 받을 수 있는 방안을 소개해줍니다. 이를 활용해서 교수학습활동을 기획해보세요.   
+                    </div>
+                    """, unsafe_allow_html=True
+            )
+
+            st.markdown(
+                    """
+                    <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
+                        ✅ 수학성취도에 미치는 중요한 전략 
+(중요도 Top 15 순서대로)
+
+- 새로운 문제에 스스로 적용하기
+- 학생들에게 지속적으로 질문
+- 기존 지식과 연계하기
+- 학생들을 관찰
+- 수업에서 과제에 대한 토론
+
+- 과제를 성적에 활용
+- 과제완료 모니터링
+- 법칙, 절차, 사실 외우게 하기
+- 답에 대한 설명
+- 과제에 대한 피드백
+
+- 짧은 형태의 평가를 활용함
+- 과제 빈도
+- 과제하는 시간
+- 교사의 문제풀이 방법 듣게 하기
+- 반 친구들과 토론하게 하기  
+                    </div>
+                    """, unsafe_allow_html=True
+            )
+    
+
     with col4:
         st.subheader("🪄수학흥미도 예측결과")
         st.markdown(
