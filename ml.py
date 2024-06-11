@@ -226,7 +226,7 @@ def run_ml_app():
         st.subheader("학업성취도 예측결과")
 
         # Load Model 1
-        model_path1 = 'models/model1.pkl'
+        model_path1 = './models/model1.pkl'
         if os.path.exists(model_path1):
             with open(model_path1, 'rb') as f:
                 model1_serialized_loaded, model1_weights_loaded = joblib.load(f)
@@ -236,8 +236,8 @@ def run_ml_app():
             model1_loaded.set_weights(model1_weights_loaded)
 
             # Load scalers for Model 1
-            scaler_X_loaded = joblib.load('models/scaler_X.pkl')
-            scaler_y_loaded = joblib.load('models/scaler_y.pkl')
+            scaler_X_loaded = joblib.load('./models/scaler_X.pkl')
+            scaler_y_loaded = joblib.load('./models/scaler_y.pkl')
 
             # Prepare input data for Model 1
             input_data_model1 = {k: v for k, v in input_data.items() if k != 'MATACH'}
