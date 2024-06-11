@@ -62,44 +62,44 @@ def run_ml_app():
         st.subheader("학교 정보")
         
         # Academic Achievement
-        st.write("학업성취도 수준을 선택하세요. 625점 이상: ‘수월’, 550점: ‘우수’, 475점: ‘보통’, 400점: ‘기초’")
-        matach = st.slider(0, 1000, 500)
+        st.write("학업성취도 수준을 선택하세요.")
+        matach = st.slider('625점 이상: ‘수월’, 550점: ‘우수’, 475점: ‘보통’, 400점: ‘기초’', 0, 1000, 500)
         
         # Non-Korean Speaking Students Ratio
-        st.write("한국어를 안 쓰는 학생 비율을 선택하세요.")
-        schkor = st.slider(1, 5, 1)
+        st.write("한국어가 모국어가 아닌 학생 비율을 선택하세요.")
+        schkor = st.slider('1: 10% 미만, 2: 10~25%, 3:25%~50%, 4:50~75%, 5: 75% 이상', 1, 5, 1)
         
         # Population Around School
         st.write("학교 주변 인구를 선택하세요.")
-        schpop = st.slider(1, 7, 1)
+        schpop = st.slider('1: 3천명 이하, 2: 3천~1.5만, 3: 1.5만~3만, 4: 3만~5만, 5: 5만~10만, 6: 10만~50만, 7: 50만 이상', 1, 7, 1)
         
         # Economically Challenged Students Ratio
         st.write("경제적으로 어려운 학생 비율을 선택하세요.")
-        schpoor = st.slider(1, 5, 1)
+        schpoor = st.slider('1: 0~10%, 2: 10~25%, 3: 25~50%, 4: 50%~', 1, 5, 1)
         
         # Gender Ratio of Students
         st.write("학생 성별 비율을 선택하세요.")
-        sgender = st.slider(0.0, 1.0, 1.0, step=0.1)
+        sgender = st.slider('남자만:0, 반반: 0.5, 여자만:1', 0.0, 1.0, 1.0, step=0.1)
         
         # Average Education Level of Guardians
-        st.write("보호자 평균 학력을 선택하세요.")
-        sgaredu = st.slider(1, 10, 5, step=1)
+        st.write("전반적인 학생들의 보호자 평균 학력을 선택하세요.")
+        sgaredu = st.slider('1: 초등이하, 2:중졸, 3:고졸, 4-5: 전문대, 6: 4년제졸, 7-8: 석박사', 1, 8, 5, step=1)
         
         # Educational Aspirations of Students
-        st.write("학생들의 교육 포부를 선택하세요.")
-        seduaspr = st.slider(1, 8, 1)
+        st.write("학생들의 평균적인 교육 포부를 선택하세요.")
+        seduaspr = st.slider('1:중졸, 2:고졸, 3-4:전문대졸, 5:학사, 6:대학원', 1, 6, 1)
         
         # Interest in Mathematics
         st.write("학생들의 수학 흥미를 선택하세요.")
-        smatint = st.slider(1, 4, 1)
+        smatint = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1)
         
         # Self-Efficacy in Mathematics
         st.write("학생들의 수학 효능/자신감을 선택하세요.")
-        smateff = st.slider(1, 4, 1)
+        smateff = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1)
         
         # Perception of Teacher's Capability
         st.write("학생들이 교사 능력에 대해 어떻게 인식하는지 선택하세요.")
-        stchrcap = st.slider(1, 4, 1)
+        stchrcap = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1)
         
         input_data_others = {
             'MATACH': matach_score,
