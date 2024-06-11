@@ -58,7 +58,7 @@ def run_ml_app():
         )
         # User input sliders for 기타 변수
         input_data_others = {}
-        
+        st.write("")
         st.subheader("🏫학교 정보")
         
         # Academic Achievement
@@ -113,7 +113,7 @@ def run_ml_app():
             'SMATEFF': smateff,
             'STCHRCAP': stchrcap
         }
-
+        st.write("")
         st.subheader("📒교사 정보")
                # Teacher Information
         st.write("🟡교사경력을 선택하세요.")
@@ -158,7 +158,7 @@ def run_ml_app():
             'TSTUCAP': tstucap,
             'TSTURES': tstures
         })
-        
+        st.write("")
         st.subheader("🥰교사 만족도")
         # Teacher Satisfaction
         st.write("🟠선생님들간의 협력 정도를 선택하세요.")
@@ -183,7 +183,7 @@ def run_ml_app():
             'TCRWD': tcrwd,
             'TOVERADM': toveradm
         })
-        
+        st.write("")
         st.subheader("🏃‍♂️교사 연수와 전문성 개발")
         # Teacher Development
         st.write("🟡수학교과 내용에 대한 연수를 받은 적이 있는지 선택하세요.")
@@ -224,7 +224,7 @@ def run_ml_app():
             'TPDSVF': tpdsvf,
             'TPDTIME': tpdtime
         })
-        
+        st.write("")
         st.subheader("🪑학습환경")
         # Student Learning
         st.write("🟠학급 내 학생 수를 선택하세요.")
@@ -245,7 +245,7 @@ def run_ml_app():
             'TLACKI': tlacki,
             'TMTIME': tmtime
         })
-        
+        st.write("")
         st.subheader("📚학생들이 배운 교과내용")
         # Mathematics Curriculum
         st.write("🟡음수계산")
@@ -354,7 +354,7 @@ def run_ml_app():
             slider_value = st.slider(label, min_value, max_value, default_value, step=step, key=key)
             st.write(description)
             return slider_value
-
+        st.write("")
         st.subheader("🧑‍🏫가르치는 방법")
 
         st.write("🟠실생활과 연결시켜 설명")
@@ -377,7 +377,7 @@ def run_ml_app():
         
         st.write("🟠학생들의 생각을 표현하도록 함")
         tinsstg7 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG7')
-        
+        st.write("")
         st.subheader("🎒학생들에게 수업에서")
         
         st.write("🟠수학 내용에 대한 교사의 설명을 듣도록 함")
@@ -403,7 +403,7 @@ def run_ml_app():
         
         st.write("🟠비슷한 능력의 학생들끼리 협업하게 함")
         tinsask8 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK8')
-        
+        st.write("")
         st.subheader("⏰과제 빈도 및 시간")
         
         st.write("🟠과제를 얼마나 자주 내주십니까?")
@@ -411,7 +411,7 @@ def run_ml_app():
         
         st.write("🟠과제에 소요되는 시간은 어느 수준입니까?")
         thwtime = st.slider('1: 15분 미만, 2: 15-30분, 3: 30-60분, 4: 60-90분, 5: 90분 이상', 1, 5, 1, key='THWTIME')
-        
+        st.write("")
         st.subheader("📖과제 전략")
         
         st.write("🟠과제에 대한 피드백을 줌")
@@ -428,7 +428,7 @@ def run_ml_app():
         
         st.write("🟠과제를 성적에 활용함")
         thwstg5 = st.slider('1:거의 안함, 2: 가끔, 3: 거의 항상', 1, 3, 1, key='THWSTG5')
-        
+        st.write("")
         st.subheader("💯평가 전략")
         
         st.write("🟠학생을 관찰함")
@@ -723,10 +723,8 @@ def run_ml_app():
 
             st.markdown(
                     """
-                    <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
-                        ✅ 수학성취도에 미치는 중요한 전략 
-(중요도 Top 15 순서대로)
-
+                    <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; width: 200%;">
+                        👀👀 Mirror에서 결과에 미치는 중요한 전략 목록 (중요도 Top 15 순서대로)
 - 새로운 문제에 스스로 적용하기
 - 학생들에게 지속적으로 질문
 - 기존 지식과 연계하기
