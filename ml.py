@@ -102,7 +102,7 @@ def run_ml_app():
         stchrcap = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1, key='STCHRCAP')
         
         input_data_others = {
-            'MATACH': matach_score,
+            'MATACH': matach,
             'SCHKOR': schkor,
             'SCHPOP': schpop,
             'SCHPOOR': schpoor,
