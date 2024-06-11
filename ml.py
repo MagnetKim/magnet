@@ -67,7 +67,7 @@ def run_ml_app():
         
         # Non-Korean Speaking Students Ratio
         st.write("한국어를 안 쓰는 학생 비율을 선택하세요.")
-        schkor = st.slider(, 1, 5, 1)
+        schkor = st.slider(1, 5, 1)
         
         # Population Around School
         st.write("학교 주변 인구를 선택하세요.")
