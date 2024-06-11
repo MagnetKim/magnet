@@ -898,6 +898,14 @@ def run_ml_app():
             # 인덱스를 가리고 결과 출력
             st.dataframe(filtered_results_df_model2.reset_index(drop=True))
 
+            st.markdown(
+                    """
+                    <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
+                        위 표에서는 현 조건에서 가장 좋은 점수를 받을 수 있는 방안을 소개해줍니다. 이를 활용해서 교수학습활동을 기획해보세요.   
+                    </div>
+                    """, unsafe_allow_html=True
+            )
+
 if __name__ == '__main__':
     run_ml_app()
 
