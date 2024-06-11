@@ -664,7 +664,7 @@ def run_ml_app():
                 unsafe_allow_html=True
             )
 
-                        variable_name_mapping = {
+             variable_name_mapping = {
                 'TINSSTG1': '실생활과 연결시켜 설명',
                 'TINSSTG2': '답에 대해 설명',
                 'TINSSTG3': '도전적인 활동을 제공',
