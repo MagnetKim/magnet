@@ -664,7 +664,7 @@ def run_ml_app():
                 unsafe_allow_html=True
             )
 
-             variable_name_mapping = {
+            variable_name_mapping = {
                 'TINSSTG1': '실생활과 연결시켜 설명',
                 'TINSSTG2': '답에 대해 설명',
                 'TINSSTG3': '도전적인 활동을 제공',
@@ -882,7 +882,7 @@ def run_ml_app():
             st.write(f'🔍교수학습전략을 어떻게 수정해봐야 할까요?')
             
             # 예제 데이터프레임
-            results_df_model1 = pd.DataFrame({
+            results_df_model2 = pd.DataFrame({
                 '전략': scaler_W_loaded.feature_names_in_,
                 '현재': np.round(input_data_df_model2.values.flatten(), 0),
                 '최적값': np.round(optimal_inputs_model2.flatten(), 1),
