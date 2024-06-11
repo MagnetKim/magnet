@@ -190,7 +190,7 @@ def run_ml_app():
         tpdmcp = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMCP')
         
         st.write("수학교과 내용에 대한 연수를 받을 계획이 있는지 선택하세요.")
-        tpdmdf = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMDF')
+        tpdmdf = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMCF')
         
         st.write("수학교육학에 대한 연수를 받은 적이 있는지 선택하세요.")
         tpdmdp = st.slider('1: 있음, 0: 없음', 0, 1, 0, key='TPDMDP')
