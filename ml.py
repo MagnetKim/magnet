@@ -227,10 +227,10 @@ def run_ml_app():
         st.markdown(
                 """
                 <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
-                    📝 예측결과 해석 주의!
+                    📝 Mirror가 산출한 결과입니다. 625점 이상은 ‘수월수준’, 550점 이상은 ‘우수수준 이상’, 475점 이상은 ‘보통수준 이상’, 400점 이상은 ‘기초수준 이상’으로 볼 수 있습니다.
                 </div>
                 """, unsafe_allow_html=True
-            )
+        )
 
         # Load Model 1
         model_path1 = 'models/model1.pkl'
@@ -408,6 +408,13 @@ def run_ml_app():
 
     with col4:
         st.subheader("수학흥미도 예측결과")
+        st.markdown(
+                """
+                <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
+                    📝 Mirror가 산출한 결과입니다. 수학흥미도의 평균은 2.5입니다. 3을 넘으면 높은 수준, 2보다 낮아지면 낮은 수준으로 볼 수 있습니다.
+                </div>
+                """, unsafe_allow_html=True
+        )
 
         # Load Model 2
         model_path2 = './models/model2.pkl'
