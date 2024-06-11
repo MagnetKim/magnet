@@ -351,8 +351,8 @@ def run_ml_app():
             """, unsafe_allow_html=True
         )
         def add_slider_with_description(label, min_value, max_value, default_value, step=1, key=None, description=None):
-        st.write(description)
-        return st.slider(label, min_value, max_value, default_value, step=step, key=key)
+            st.write(description)
+            return st.slider(label, min_value, max_value, default_value, step=step, key=key)
 
         st.subheader("교수 전략")
         
