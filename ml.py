@@ -63,7 +63,7 @@ def run_ml_app():
         
         # Academic Achievement
         st.write("학업성취도 수준을 선택하세요. 625점 이상: ‘수월’, 550점: ‘우수’, 475점: ‘보통’, 400점: ‘기초’")
-        matach = st.slider(0, 1000, 500, step=100)
+        matach = st.slider(0, 1000, 500)
         
         # Non-Korean Speaking Students Ratio
         st.write("한국어를 안 쓰는 학생 비율을 선택하세요.")
