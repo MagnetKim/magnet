@@ -378,7 +378,7 @@ def run_ml_app():
         st.write("🟠학생들의 생각을 표현하도록 함")
         tinsstg7 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSSTG7')
         
-        st.subheader("🎒학생에게 수업에서 요청하는 것")
+        st.subheader("🎒학생들에게 수업에서")
         
         st.write("🟠수학 내용에 대한 교사의 설명을 듣도록 함")
         tinsask1 = st.slider('1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용', 1, 4, 1, key='TINSASK1')
@@ -495,7 +495,7 @@ def run_ml_app():
 
 
     with col3:
-        st.subheader("학업성취도 예측결과")
+        st.subheader("✨학업성취도 예측결과✨")
         st.markdown(
                 """
                 <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
@@ -664,22 +664,57 @@ def run_ml_app():
                 unsafe_allow_html=True
             )
 
-            st.write(f'교수학습전략을 어떻게 수정해봐야 할까요?')
-
+                        variable_name_mapping = {
+                'TINSSTG1': '실생활과 연결시켜 설명',
+                'TINSSTG2': '답에 대해 설명',
+                'TINSSTG3': '도전적인 활동을 제공',
+                'TINSSTG4': '반 친구들과 토론',
+                'TINSSTG5': '기존 지식의 연계',
+                'TINSSTG6': '문제해결과정 설명',
+                'TINSSTG7': '학생들의 생각을 표현하도록 함',
+                'TINSASK1': '수학 내용에 대한 교사의 설명을 듣도록 함',
+                'TINSASK2': '교사의 문제풀이 방법을 듣도록 함',
+                'TINSASK3': '법칙, 절차, 사실을 외우도록 함',
+                'TINSASK4': '스스로 절차를 연습해보도록 함',
+                'TINSASK5': '새로운 문제에 스스로 적용해보도록 함',
+                'TINSASK6': '교사의 지도 아래 반 전체가 문제를 풀어보도록 함',
+                'TINSASK7': '다양한 능력의 학생들끼리 협업하게 함',
+                'TINSASK8': '비슷한 능력의 학생들끼리 협업하게 함',
+                'THWFRQ': '과제를 얼마나 자주 내주십니까?',
+                'THWTIME': '과제에 소요되는 시간은 어느 수준입니까?',
+                'THWSTG1': '과제에 대한 피드백을 줌',
+                'THWSTG2': '과제를 스스로 고치도록 함',
+                'THWSTG3': '수업에서 과제에 대한 토론을 함',
+                'THWSTG4': '과제가 완료되었는지 모니터링함',
+                'THWSTG5': '과제를 성적에 활용함',
+                'THWSTG6': '학생을 관찰함',
+                'THWSTG7': '학생에게 지속적으로 질문함',
+                'THWSTG8': '짧은 형태의 평가를 활용함',
+                'THWSTG9': '긴 형태의 평가를 활용함',
+                'THWSTG10': '장기간의 프로젝트를 부여함'
+            }
+            
+            st.write(f'🔍교수학습전략을 어떻게 수정해봐야 할까요?')
+            
+            # 예제 데이터프레임
             results_df_model1 = pd.DataFrame({
                 '전략': scaler_X_loaded.feature_names_in_,
                 '현재': np.round(input_data_df_model1.values.flatten(), 0),
                 '최적값': np.round(optimal_inputs_model1.flatten(), 1),
                 '차이': np.round(difference_model1.flatten(), 1)
             })
-
-            pd.set_option('display.max_rows', None)
+            
+            # 변수명 매핑 적용
+            results_df_model1['전략'] = results_df_model1['전략'].map(variable_name_mapping)
+            
             # difference 항이 0이 아닌 행만 필터링
             filtered_results_df_model1 = results_df_model1[results_df_model1['차이'].abs() > 0.3]
-            st.dataframe(filtered_results_df_model1)
+            
+            # 인덱스를 가리고 결과 출력
+            st.dataframe(filtered_results_df_model1.reset_index(drop=True))
 
     with col4:
-        st.subheader("수학흥미도 예측결과")
+        st.subheader("🪄수학흥미도 예측결과")
         st.markdown(
                 """
                 <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
@@ -844,18 +879,24 @@ def run_ml_app():
                 unsafe_allow_html=True
             )
 
-            st.write(f'교수학습전략을 어떻게 수정해봐야 할까요?')
-
-            results_df_model2 = pd.DataFrame({
+            st.write(f'🔍교수학습전략을 어떻게 수정해봐야 할까요?')
+            
+            # 예제 데이터프레임
+            results_df_model1 = pd.DataFrame({
                 '전략': scaler_W_loaded.feature_names_in_,
                 '현재': np.round(input_data_df_model2.values.flatten(), 0),
                 '최적값': np.round(optimal_inputs_model2.flatten(), 1),
                 '차이': np.round(difference_model2.flatten(), 1)
             })
-
+            
+            # 변수명 매핑 적용
+            results_df_model2['전략'] = results_df_model2['전략'].map(variable_name_mapping)
+            
+            # difference 항이 0이 아닌 행만 필터링
             filtered_results_df_model2 = results_df_model2[results_df_model2['차이'].abs() > 0.3]
-            st.dataframe(filtered_results_df_model2)
-
+            
+            # 인덱스를 가리고 결과 출력
+            st.dataframe(filtered_results_df_model2.reset_index(drop=True))
 
 if __name__ == '__main__':
     run_ml_app()
