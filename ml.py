@@ -58,24 +58,10 @@ def run_ml_app():
         )
         # User input sliders for 기타 변수
         input_data_others = {}
-
-        def categorize_matach(score):
-            if score >= 625:
-                return '수월수준'
-            elif score >= 550:
-                return '우수수준 이상'
-            elif score >= 475:
-                return '보통수준 이상'
-            elif score >= 400:
-                return '기초수준 이상'
-            else:
-                return '그 이하'
-
-        matach_score = st.slider('학업성취도', 0, 1000, 500)
         
         st.subheader("학교 정보")
         input_data_others.update({
-            'MATACH': categorize_matach(matach_score),
+            'MATACH': st.slider('학업성취도 수준', 0, 1000, 500),
             'SCHKOR': st.slider('한국어를 안 쓰는 학생 비율', 1, 5, 1),
             'SCHPOP': st.slider('학교주변 인구', 1, 7, 1),
             'SCHPOOR': st.slider('경제적으로 어려운 학생비율', 1, 5, 1),
