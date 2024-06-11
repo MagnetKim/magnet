@@ -59,7 +59,7 @@ def run_ml_app():
         # User input sliders for 기타 변수
         input_data_others = {}
 
-        def categorize_matach(score):
+            def categorize_matach(score):
         if score >= 625:
             return '수월수준'
         elif score >= 550:
