@@ -62,44 +62,44 @@ def run_ml_app():
         st.subheader("학교 정보")
         
         # Academic Achievement
-        matach = st.slider('학업성취도 수준', 0, 1000, 500, step=100)
         st.write("학업성취도 수준을 선택하세요. 625점 이상: ‘수월’, 550점: ‘우수’, 475점: ‘보통’, 400점: ‘기초’")
+        matach = st.slider(0, 1000, 500, step=100)
         
         # Non-Korean Speaking Students Ratio
         st.write("한국어를 안 쓰는 학생 비율을 선택하세요.")
-        schkor = st.slider('한국어를 안 쓰는 학생 비율', 1, 5, 1)
+        schkor = st.slider(, 1, 5, 1)
         
         # Population Around School
         st.write("학교 주변 인구를 선택하세요.")
-        schpop = st.slider('학교주변 인구', 1, 7, 1)
+        schpop = st.slider(1, 7, 1)
         
         # Economically Challenged Students Ratio
         st.write("경제적으로 어려운 학생 비율을 선택하세요.")
-        schpoor = st.slider('경제적으로 어려운 학생비율', 1, 5, 1)
+        schpoor = st.slider(1, 5, 1)
         
         # Gender Ratio of Students
         st.write("학생 성별 비율을 선택하세요.")
-        sgender = st.slider('학생성별 비율', 0.0, 1.0, 1.0, step=0.1)
+        sgender = st.slider(0.0, 1.0, 1.0, step=0.1)
         
         # Average Education Level of Guardians
         st.write("보호자 평균 학력을 선택하세요.")
-        sgaredu = st.slider('보호자 평균학력', 1, 10, 5, step=1)
+        sgaredu = st.slider(1, 10, 5, step=1)
         
         # Educational Aspirations of Students
         st.write("학생들의 교육 포부를 선택하세요.")
-        seduaspr = st.slider('학생들의 교육포부', 1, 8, 1)
+        seduaspr = st.slider(1, 8, 1)
         
         # Interest in Mathematics
         st.write("학생들의 수학 흥미를 선택하세요.")
-        smatint = st.slider('수학흥미', 1, 4, 1)
+        smatint = st.slider(1, 4, 1)
         
         # Self-Efficacy in Mathematics
         st.write("학생들의 수학 효능/자신감을 선택하세요.")
-        smateff = st.slider('수학효능/자신감', 1, 4, 1)
+        smateff = st.slider(1, 4, 1)
         
         # Perception of Teacher's Capability
         st.write("학생들이 교사 능력에 대해 어떻게 인식하는지 선택하세요.")
-        stchrcap = st.slider('교사능력에 대한 학생들의 인식', 1, 4, 1)
+        stchrcap = st.slider(1, 4, 1)
         
         input_data_others = {
             'MATACH': matach_score,
