@@ -67,19 +67,19 @@ def run_ml_app():
         
         # Non-Korean Speaking Students Ratio
         st.write("한국어가 모국어가 아닌 학생 비율을 선택하세요.")
-        schkor = st.slider('1: 10% 미만, 2: 10~25%, 3:25%~50%, 4:50~75%, 5: 75% 이상', 1, 5, 1)
+        schkor = st.slider('1: 10% 미만, 2: 10-25%, 3:25%-50%, 4:50-75%, 5: 75% 이상', 1, 5, 1)
         
         # Population Around School
         st.write("학교 주변 인구를 선택하세요.")
-        schpop = st.slider('1: 3천명 이하, 2: 3천~1.5만, 3: 1.5만~3만, 4: 3만~5만, 5: 5만~10만, 6: 10만~50만, 7: 50만 이상', 1, 7, 1)
+        schpop = st.slider('1: 3천명 이하, 2: 3천-1.5만, 3: 1.5만-3만, 4: 3만-5만, 5: 5만-10만, 6: 10만-50만, 7: 50만 이상', 1, 7, 1)
         
         # Economically Challenged Students Ratio
         st.write("경제적으로 어려운 학생 비율을 선택하세요.")
-        schpoor = st.slider('1: 0~10%, 2: 10~25%, 3: 25~50%, 4: 50%~', 1, 5, 1)
+        schpoor = st.slider('1: 0-10%, 2: 10-25%, 3: 25-50%, 4: 50%-', 1, 5, 1)
         
         # Gender Ratio of Students
         st.write("학생 성별 비율을 선택하세요.")
-        sgender = st.slider('남자만:0, 반반: 0.5, 여자만:1', 0.0, 1.0, 1.0, step=0.1)
+        sgender = st.slider('0: 남자만, 반반: 0.5, 1: 여자만', 0.0, 1.0, 1.0, step=0.1)
         
         # Average Education Level of Guardians
         st.write("전반적인 학생들의 보호자 평균 학력을 선택하세요.")
