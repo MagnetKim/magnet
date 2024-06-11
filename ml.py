@@ -60,18 +60,73 @@ def run_ml_app():
         input_data_others = {}
         
         st.subheader("학교 정보")
-        input_data_others.update({
-            'MATACH': st.slider('학업성취도 수준', 0, 1000, 500),
-            'SCHKOR': st.slider('한국어를 안 쓰는 학생 비율', 1, 5, 1),
-            'SCHPOP': st.slider('학교주변 인구', 1, 7, 1),
-            'SCHPOOR': st.slider('경제적으로 어려운 학생비율', 1, 5, 1),
-            'SGENDER': st.slider('학생성별 비율', 0.0, 1.0, 1.0, step=0.1),
-            'SGAREDU': st.slider('보호자 평균학력', 1, 10, 5, step=1),
-            'SEDUASPR': st.slider('학생들의 교육포부', 1, 8, 1),
-            'SMATINT': st.slider('수학흥미', 1, 4, 1),
-            'SMATEFF': st.slider('수학효능/자신감', 1, 4, 1),
-            'STCHRCAP': st.slider('교사능력에 대한 학생들의 인식', 1, 4, 1)
-        })
+        def categorize_matach(score):
+            if score >= 625:
+                return '수월수준'
+            elif score >= 550:
+                return '우수수준 이상'
+            elif score >= 475:
+                return '보통수준 이상'
+            elif score >= 400:
+                return '기초수준 이상'
+            else:
+                return '그 이하'
+        
+        st.subheader("학교 정보")
+        
+        # Academic Achievement
+        st.write("학업성취도 수준을 선택하세요.")
+        matach_score = st.slider('학업성취도 수준', 0, 1000, 500)
+        
+        # Non-Korean Speaking Students Ratio
+        st.write("한국어를 안 쓰는 학생 비율을 선택하세요.")
+        schkor = st.slider('한국어를 안 쓰는 학생 비율', 1, 5, 1)
+        
+        # Population Around School
+        st.write("학교 주변 인구를 선택하세요.")
+        schpop = st.slider('학교주변 인구', 1, 7, 1)
+        
+        # Economically Challenged Students Ratio
+        st.write("경제적으로 어려운 학생 비율을 선택하세요.")
+        schpoor = st.slider('경제적으로 어려운 학생비율', 1, 5, 1)
+        
+        # Gender Ratio of Students
+        st.write("학생 성별 비율을 선택하세요.")
+        sgender = st.slider('학생성별 비율', 0.0, 1.0, 1.0, step=0.1)
+        
+        # Average Education Level of Guardians
+        st.write("보호자 평균 학력을 선택하세요.")
+        sgaredu = st.slider('보호자 평균학력', 1, 10, 5, step=1)
+        
+        # Educational Aspirations of Students
+        st.write("학생들의 교육 포부를 선택하세요.")
+        seduaspr = st.slider('학생들의 교육포부', 1, 8, 1)
+        
+        # Interest in Mathematics
+        st.write("학생들의 수학 흥미를 선택하세요.")
+        smatint = st.slider('수학흥미', 1, 4, 1)
+        
+        # Self-Efficacy in Mathematics
+        st.write("학생들의 수학 효능/자신감을 선택하세요.")
+        smateff = st.slider('수학효능/자신감', 1, 4, 1)
+        
+        # Perception of Teacher's Capability
+        st.write("학생들이 교사 능력에 대해 어떻게 인식하는지 선택하세요.")
+        stchrcap = st.slider('교사능력에 대한 학생들의 인식', 1, 4, 1)
+        
+        input_data_others = {
+            'MATACH': categorize_matach(matach_score),
+            'SCHKOR': schkor,
+            'SCHPOP': schpop,
+            'SCHPOOR': schpoor,
+            'SGENDER': sgender,
+            'SGAREDU': sgaredu,
+            'SEDUASPR': seduaspr,
+            'SMATINT': smatint,
+            'SMATEFF': smateff,
+            'STCHRCAP': stchrcap
+        }
+
 
         st.subheader("교사 정보")
         input_data_others.update({
