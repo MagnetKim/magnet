@@ -59,17 +59,17 @@ def run_ml_app():
         # User input sliders for 기타 변수
         input_data_others = {}
 
-            def categorize_matach(score):
-        if score >= 625:
-            return '수월수준'
-        elif score >= 550:
-            return '우수수준 이상'
-        elif score >= 475:
-            return '보통수준 이상'
-        elif score >= 400:
-            return '기초수준 이상'
-        else:
-            return '그 이하'
+        def categorize_matach(score):
+            if score >= 625:
+                return '수월수준'
+            elif score >= 550:
+                return '우수수준 이상'
+            elif score >= 475:
+                return '보통수준 이상'
+            elif score >= 400:
+                return '기초수준 이상'
+            else:
+                return '그 이하'
 
         matach_score = st.slider('학업성취도', 0, 1000, 500)
         
