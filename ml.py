@@ -26,7 +26,7 @@ def predict_with_input(model, scaler_X, scaler_y, input_data, columns):
 # Function to run the Streamlit app
 def run_ml_app():
     st.set_page_config(layout="wide")
-    st.title("Project Mirror")
+    st.title("🪞Project Mirror✨")
 
     if 'change_count' not in st.session_state:
         st.session_state.change_count = 0
@@ -86,15 +86,15 @@ def run_ml_app():
         sgaredu = st.slider('1: 초등이하, 2:중졸, 3:고졸, 4-5: 전문대, 6: 4년제졸, 7-8: 석박사', 1, 8, 5, step=1)
         
         # Educational Aspirations of Students
-        st.write("학생들의 평균적인 교육 포부를 선택하세요.")
+        st.write("학생들의 평균적인 교육 포부 수준을 선택하세요.")
         seduaspr = st.slider('1:중졸, 2:고졸, 3-4:전문대졸, 5:학사, 6:대학원', 1, 6, 1)
         
         # Interest in Mathematics
-        st.write("학생들의 수학 흥미를 선택하세요.")
+        st.write("학생들의 수학 흥미 수준을을 선택하세요.")
         smatint = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1)
         
         # Self-Efficacy in Mathematics
-        st.write("학생들의 수학 효능/자신감을 선택하세요.")
+        st.write("학생들의 수학 효능/자신감 수준을 선택하세요.")
         smateff = st.slider('1: 매우 낮음, 2: 낮음, 3: 높음, 4: 매우 높음', 1, 4, 1)
         
         # Perception of Teacher's Capability
@@ -350,54 +350,58 @@ def run_ml_app():
             </div>
             """, unsafe_allow_html=True
         )
-        st.subheader("교수 전략")
-        input_data_details.update({
-            'TINSSTG1': st.slider('실생활과 연결시켜 설명', 1, 4, 1, key='TINSSTG1'),
-            'TINSSTG2': st.slider('답에 대해 설명', 1, 4, 1, key='TINSSTG2'),
-            'TINSSTG3': st.slider('도전적인 활동을 제공', 1, 4, 1, key='TINSSTG3'),
-            'TINSSTG4': st.slider('반 친구들과 토론', 1, 4, 1, key='TINSSTG4'),
-            'TINSSTG5': st.slider('기존 지식의 연계', 1, 4, 1, key='TINSSTG5'),
-            'TINSSTG6': st.slider('문제해결과정 설명', 1, 4, 1, key='TINSSTG6'),
-            'TINSSTG7': st.slider('학생들의 생각을 표현하도록 함', 1, 4, 1, key='TINSSTG7')
-        })
+        def add_slider_with_description(label, min_value, max_value, default_value, step=1, key=None, description=None):
+    st.write(description)
+    return st.slider(label, min_value, max_value, default_value, step=step, key=key)
 
+        st.subheader("교수 전략")
+        
+        input_data_details = {}
+        input_data_details.update({
+            'TINSSTG1': add_slider_with_description('실생활과 연결시켜 설명', 1, 4, 1, key='TINSSTG1', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSSTG2': add_slider_with_description('답에 대해 설명', 1, 4, 1, key='TINSSTG2', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSSTG3': add_slider_with_description('도전적인 활동을 제공', 1, 4, 1, key='TINSSTG3', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSSTG4': add_slider_with_description('반 친구들과 토론', 1, 4, 1, key='TINSSTG4', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSSTG5': add_slider_with_description('기존 지식의 연계', 1, 4, 1, key='TINSSTG5', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSSTG6': add_slider_with_description('문제해결과정 설명', 1, 4, 1, key='TINSSTG6', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSSTG7': add_slider_with_description('학생들의 생각을 표현하도록 함', 1, 4, 1, key='TINSSTG7', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용')
+        })
+        
         st.subheader("학생에게 요청하는 내용")
         input_data_details.update({
-            'TINSASK1': st.slider('수학 내용에 대한 교사의 설명을 듣도록 함', 1, 4, 1, key='TINSASK1'),
-            'TINSASK2': st.slider('교사의 문제풀이 방법을 듣도록 함', 1, 4, 1, key='TINSASK2'),
-            'TINSASK3': st.slider('법칙, 절차, 사실을 외우도록 함', 1, 4, 1, key='TINSASK3'),
-            'TINSASK4': st.slider('스스로 절차를 연습해보도록 함', 1, 4, 1, key='TINSASK4'),
-            'TINSASK5': st.slider('새로운 문제에 스스로 적용해보도록 함', 1, 4, 1, key='TINSASK5'),
-            'TINSASK6': st.slider('교사의 지도 아래 반 전체가 문제를 풀어보도록 함', 1, 4, 1, key='TINSASK6'),
-            'TINSASK7': st.slider('다양한 능력의 학생들끼리 협업하게 함', 1, 4, 1, key='TINSASK7'),
-            'TINSASK8': st.slider('비슷한 능력의 학생들끼리 협업하게 함', 1, 4, 1, key='TINSASK8')
+            'TINSASK1': add_slider_with_description('수학 내용에 대한 교사의 설명을 듣도록 함', 1, 4, 1, key='TINSASK1', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK2': add_slider_with_description('교사의 문제풀이 방법을 듣도록 함', 1, 4, 1, key='TINSASK2', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK3': add_slider_with_description('법칙, 절차, 사실을 외우도록 함', 1, 4, 1, key='TINSASK3', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK4': add_slider_with_description('스스로 절차를 연습해보도록 함', 1, 4, 1, key='TINSASK4', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK5': add_slider_with_description('새로운 문제에 스스로 적용해보도록 함', 1, 4, 1, key='TINSASK5', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK6': add_slider_with_description('교사의 지도 아래 반 전체가 문제를 풀어보도록 함', 1, 4, 1, key='TINSASK6', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK7': add_slider_with_description('다양한 능력의 학생들끼리 협업하게 함', 1, 4, 1, key='TINSASK7', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용'),
+            'TINSASK8': add_slider_with_description('비슷한 능력의 학생들끼리 협업하게 함', 1, 4, 1, key='TINSASK8', description='1:아예 적용 안 함, 2: 몇몇 수업에서 적용, 3: 주당 1-2번 이상 적용, 4: 거의 매 수업 적용')
         })
-
+        
         st.subheader("과제 빈도 및 시간")
         input_data_details.update({
-            'THWFRQ': st.slider('과제를 얼마나 자주 내주십니까?', 1, 5, 1, key='THWFRQ'),
-            'THWTIME': st.slider('과제에 소요되는 시간은 어느 수준입니까?', 1, 5, 1, key='THWTIME')
+            'THWFRQ': add_slider_with_description('과제를 얼마나 자주 내주십니까?', 1, 5, 1, key='THWFRQ', description='1:안 냄, 2: 주 1회 이하, 3: 주 1-2회, 4: 주 3-4회, 5: 매일'),
+            'THWTIME': add_slider_with_description('과제에 소요되는 시간은 어느 수준입니까?', 1, 5, 1, key='THWTIME', description='1: 15분 미만, 2: 15-30분, 3: 30-60분, 4: 60-90분, 5: 90분 이상')
         })
-
+        
         st.subheader("과제 전략")
         input_data_details.update({
-            'THWSTG1': st.slider('과제에 대한 피드백을 줌', 1, 3, 1, key='THWSTG1'),
-            'THWSTG2': st.slider('과제를 스스로 고치도록 함', 1, 3, 1, key='THWSTG2'),
-            'THWSTG3': st.slider('수업에서 과제에 대한 토론을 함', 1, 3, 1, key='THWSTG3'),
-            'THWSTG4': st.slider('과제가 완료되었는지 모니터링함', 1, 3, 1, key='THWSTG4'),
-            'THWSTG5': st.slider('과제를 성적에 활용함', 1, 3, 1, key='THWSTG5'),
+            'THWSTG1': add_slider_with_description('과제에 대한 피드백을 줌', 1, 3, 1, key='THWSTG1', description='1:거의 안함, 2: 가끔, 3: 거의 항상'),
+            'THWSTG2': add_slider_with_description('과제를 스스로 고치도록 함', 1, 3, 1, key='THWSTG2', description='1:거의 안함, 2: 가끔, 3: 거의 항상'),
+            'THWSTG3': add_slider_with_description('수업에서 과제에 대한 토론을 함', 1, 3, 1, key='THWSTG3', description='1:거의 안함, 2: 가끔, 3: 거의 항상'),
+            'THWSTG4': add_slider_with_description('과제가 완료되었는지 모니터링함', 1, 3, 1, key='THWSTG4', description='1:거의 안함, 2: 가끔, 3: 거의 항상'),
+            'THWSTG5': add_slider_with_description('과제를 성적에 활용함', 1, 3, 1, key='THWSTG5', description='1:거의 안함, 2: 가끔, 3: 거의 항상')
         })
-
+        
         st.subheader("이외 중요한 교수학습 전략")
         input_data_details.update({
-            'THWSTG6': st.slider('학생을 관찰함', 1, 3, 1, key='THWSTG6'),
-            'THWSTG7': st.slider('학생에게 지속적으로 질문함', 1, 3, 1, key='THWSTG7'),
-            'THWSTG8': st.slider('짧은 형태의 평가를 활용함', 1, 3, 1, key='THWSTG8'),
-            'THWSTG9': st.slider('긴 형태의 평가를 활용함', 1, 3, 1, key='THWSTG9'),
-            'THWSTG10': st.slider('장기간의 프로젝트를 부여함', 1, 3, 1, key='THWSTG10')
+            'THWSTG6': add_slider_with_description('학생을 관찰함', 1, 3, 1, key='THWSTG6', description='1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함'),
+            'THWSTG7': add_slider_with_description('학생에게 지속적으로 질문함', 1, 3, 1, key='THWSTG7', description='1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함'),
+            'THWSTG8': add_slider_with_description('짧은 형태의 평가를 활용함', 1, 3, 1, key='THWSTG8', description='1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함'),
+            'THWSTG9': add_slider_with_description('긴 형태의 평가를 활용함', 1, 3, 1, key='THWSTG9', description='1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함'),
+            'THWSTG10': add_slider_with_description('장기간의 프로젝트를 부여함', 1, 3, 1, key='THWSTG10', description='1:중요하지 않음, 2: 약간 중요함, 3: 매우 중요하게 생각함')
         })
-
-
 
     input_data = {**input_data_others, **input_data_details}
 
