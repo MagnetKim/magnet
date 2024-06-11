@@ -115,76 +115,229 @@ def run_ml_app():
         }
 
 
-        st.subheader("교사 정보")
+               # Teacher Information
+        st.write("교사경력을 선택하세요.")
+        tcareer = st.slider('총 경력 연수', 1, 60, 1)
+        
+        st.write("교사성별을 선택하세요.")
+        tgender = st.slider('남자:1, 여자:0', 0, 1, 0)
+        
+        st.write("교사나이를 선택하세요.")
+        tage = st.slider('만 기준', 20, 70, 20)
+        
+        st.write("수학과전공 여부를 선택하세요.")
+        tmajmath = st.slider('수학과 전공이면 1', 0, 1, 0)
+        
+        st.write("수학교육과전공 여부를 선택하세요.")
+        tmajme = st.slider('수학교육과전공이면 1', 0, 1, 1)
+        
+        st.write("학생 공부에 대한 교사의 기대를 선택하세요.")
+        tstutexp = st.slider('1:매우 낮음 - 5:매우 높음', 1, 5, 1)
+        
+        st.write("학생 공부에 대한 학부모의 기대를 선택하세요.")
+        tstupexp = st.slider('1:매우 낮음 - 5:매우 높음', 1, 5, 1)
+        
+        st.write("학생들은 학교에서 잘 지내려고 한다")
+        tstusexp = st.slider('1:매우 아니다 - 5:매우 그렇다', 1, 5, 1)
+        
+        st.write("선생님이 생각하시는 학생들의 역량을 선택하세요.")
+        tstucap = st.slider('1:매우 낮음 - 5:매우 높음', 1, 5, 1)
+        
+        st.write("학생들은 교사들을 존중하나요?")
+        tstures = st.slider('1:매우 아니다 - 5:매우 그렇다', 1, 5, 1)
+        
         input_data_others.update({
-            'TCAREER': st.slider('교사경력', 1, 60, 1),
-            'TGENDER': st.slider('교사성별', 0, 1, 0),
-            'TAGE': st.slider('교사나이', 20, 70, 20),
-            'TMAJMATH': st.slider('수학과전공', 0, 1, 0),
-            'TMAJME': st.slider('수학교육과전공', 0, 1, 1),
-            'TSTUTEXP': st.slider('학생 공부에 대한 교사의 기대', 1, 5, 1),
-            'TSTUPEXP': st.slider('학생 공부에 대한 학부모의 기대', 1, 5, 1),
-            'TSTUSEXP': st.slider('학생들은 학교에서 얼마나 잘 지내려고 하나요?', 1, 5, 1),
-            'TSTUCAP': st.slider('학생들의 역량은?', 1, 5, 1),
-            'TSTURES': st.slider('학생들은 교사들을 존중하나요?', 1, 5, 1)
+            'TCAREER': tcareer,
+            'TGENDER': tgender,
+            'TAGE': tage,
+            'TMAJMATH': tmajmath,
+            'TMAJME': tmajme,
+            'TSTUTEXP': tstutexp,
+            'TSTUPEXP': tstupexp,
+            'TSTUSEXP': tstusexp,
+            'TSTUCAP': tstucap,
+            'TSTURES': tstures
         })
-
+        
         st.subheader("교사 만족도")
+        # Teacher Satisfaction
+        st.write("선생님들간의 협력 정도를 선택하세요.")
+        tcollab = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1)
+        
+        st.write("선생님의 직무만족도를 선택하세요.")
+        tsatis = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1)
+        
+        st.write("선생님의 직무에 대한 열정을 선택하세요.")
+        tpassion = st.slider('1: 매우 낮음 - 4: 매우 높음', 1, 4, 1)
+        
+        st.write("선생님은 담당하는 학생이 너무 많다고 생각하시나요?")
+        tcrwd = st.slider('1: 전혀 비동의 - 4: 매우 동의', 1, 4, 1)
+        
+        st.write("선생님의 행정업무양이 많다고 생각하시나요?")
+        toveradm = st.slider('1: 전혀 비동의 - 4: 매우 동의', 1, 4, 1)
+        
         input_data_others.update({
-            'TCOLLAB': st.slider('선생님들간의 협력은 어느 정도인가요?', 1, 4, 1),
-            'TSATIS': st.slider('선생님의 직무만족은 어느 수준이세요?', 1, 4, 1),
-            'TPASSION': st.slider('선생님의 직무에 대한 열정은 어느 정도인가요?', 1, 4, 1),
-            'TCRWD': st.slider('선생님은 담당하는 학생이 너무 많다고 생각하시나요?', 1, 4, 1),
-            'TOVERADM': st.slider('선생님의 행정업무는 어느 수준이세요?', 1, 4, 1)
+            'TCOLLAB': tcollab,
+            'TSATIS': tsatis,
+            'TPASSION': tpassion,
+            'TCRWD': tcrwd,
+            'TOVERADM': toveradm
         })
-
+        
         st.subheader("교사 발전")
+        # Teacher Development
+        st.write("수학교과 내용에 대한 연수를 받은 적이 있는지 선택하세요.")
+        tpdmcp = st.slider('수학교과 내용에 대한 연수를 받은 적이 있다', 0, 1, 0)
+        
+        st.write("수학교과 내용에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        tpdmdf = st.slider('수학교과 내용에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        
+        st.write("수학교육학에 대한 연수를 받은 적이 있는지 선택하세요.")
+        tpdmdp = st.slider('수학교육학에 대한 연수를 받은 적이 있다.', 0, 1, 0)
+        
+        st.write("수학교육학에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        tpdmcf = st.slider('수학교육학에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        
+        st.write("수학교육과정에 대한 연수를 받은 적이 있는지 선택하세요.")
+        tpdmep = st.slider('수학교육과정에 대한 연수를 받은 적이 있다', 0, 1, 0)
+        
+        st.write("수학교육과정에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        tpdmef = st.slider('수학교육과정에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        
+        st.write("수학 문제해결 역량에 대한 연수를 받은 적이 있는지 선택하세요.")
+        tpdsvp = st.slider('수학 문제해결 역량에 대한 연수를 받은 적이 있다', 0, 1, 0)
+        
+        st.write("수학 문제해결 역량에 대한 연수를 받을 계획이 있는지 선택하세요.")
+        tpdsvf = st.slider('수학 문제해결 역량에 대한 연수를 받을 계획이 있다', 0, 1, 0)
+        
+        st.write("전문성 향상에 투자하는 시간을 선택하세요.")
+        tpdtime = st.slider('전문성 향상에 투자하는 시간은 어느 정도인가요?', 1, 5, 0)
+        
         input_data_others.update({
-            'TPDMCP': st.slider('수학교과 내용에 대한 연수를 받은 적이 있다', 0, 1, 0),
-            'TPDMCF': st.slider('수학교과 내용에 대한 연수를 받을 계획이 있다', 0, 1, 0),
-            'TPDMDP': st.slider('수학교육학에 대한 연수를 받은 적이 있다.', 0, 1, 0),
-            'TPDMDF': st.slider('수학교육학에 대한 연수를 받을 계획이 있다', 0, 1, 0),
-            'TPDMEP': st.slider('수학교육과정에 대한 연수를 받은 적이 있다', 0, 1, 0),
-            'TPDMEF': st.slider('수학교육과정에 대한 연수를 받을 계획이 있다', 0, 1, 0),
-            'TPDSVP': st.slider('수학 문제해결 역량에 대한 연수를 받은 적이 있다', 0, 1, 0),
-            'TPDSVF': st.slider('수학 문제해결 역량에 대한 연수를 받을 계획이 있다', 0, 1, 0),
-            'TPDTIME': st.slider('전문성 향상에 투자하는 시간은 어느 정도인가요? ', 1, 5, 0)
+            'TPDMCP': tpdmcp,
+            'TPDMCF': tpdmcf,
+            'TPDMDP': tpdmdp,
+            'TPDMDF': tpdmdf,
+            'TPDMEP': tpdmep,
+            'TPDMEF': tpdmef,
+            'TPDSVP': tpdsvp,
+            'TPDSVF': tpdsvf,
+            'TPDTIME': tpdtime
         })
-
+        
         st.subheader("학생 학습")
+        # Student Learning
+        st.write("학급 내 학생 수를 선택하세요.")
+        tstupc = st.slider('학급 내 학생 수는 몇 명인가요?', 1, 50, 28)
+        
+        st.write("수학지식이 부족한 학생 비율을 선택하세요.")
+        tlackk = st.slider('수학지식이 부족한 학생은 어느 정도인가요?', 1, 3, 1)
+        
+        st.write("수학 흥미가 부족한 학생 비율을 선택하세요.")
+        tlacki = st.slider('수학 흥미가 부족한 학생은 어느 정도인가요?', 1, 3, 1)
+        
+        st.write("1주일에 수학 시간을 선택하세요.")
+        tmtime = st.slider('1주일에 수학 시간은 몇 분인가요?', 1, 1800, 700)
+        
         input_data_others.update({
-            'TSTUPC': st.slider('학급 내 학생 수는 몇 명인가요?', 1, 50, 28),
-            'TLACKK': st.slider('수학지식이 부족한 학생은 어느 정도인가요?', 1, 3, 1),
-            'TLACKI': st.slider('수학 흥미가 부족한 학생은 어느 정도인가요?', 1, 3, 1),
-            'TMTIME': st.slider('1주일에 수학 시간은 몇 분인가요?', 1, 1800, 700)
+            'TSTUPC': tstupc,
+            'TLACKK': tlackk,
+            'TLACKI': tlacki,
+            'TMTIME': tmtime
         })
-
+        
         st.subheader("학생들이 배운 교과내용")
+        # Mathematics Curriculum
+        st.write("음수계산을 선택하세요.")
+        tprik1 = st.slider('음수계산', 0, 2, 0)
+        
+        st.write("분수와 소수를 선택하세요.")
+        tprik2 = st.slider('분수와 소수', 0, 2, 0)
+        
+        st.write("비율과 퍼센트를 선택하세요.")
+        tprik3 = st.slider('비율과 퍼센트', 0, 2, 0)
+        
+        st.write("대수의 표현을 선택하세요.")
+        tprik4 = st.slider('대수의 표현', 0, 2, 0)
+        
+        st.write("단순 선형 방정식을 선택하세요.")
+        tprik5 = st.slider('단순 선형 방정식', 0, 2, 0)
+        
+        st.write("단순 선형 부등식을 선택하세요.")
+        tprik6 = st.slider('단순 선형 부등식', 0, 2, 0)
+        
+        st.write("연립방정식을 선택하세요.")
+        tprik7 = st.slider('연립방정식', 0, 2, 0)
+        
+        st.write("선형/2차 함수 표현을 선택하세요.")
+        tprik8 = st.slider('선형/2차 함수 표현', 0, 2, 0)
+        
+        st.write("함수의 특성을 선택하세요.")
+        tprik9 = st.slider('함수의 특성', 0, 2, 0)
+        
+        st.write("패턴을 표현하는 방법을 선택하세요.")
+        tprik10 = st.slider('패턴을 표현하는 방법', 0, 2, 0)
+        
+        st.write("각, 평형 모양에 대한 특성을 선택하세요.")
+        tprik11 = st.slider('각, 평형 모양에 대한 특성', 0, 2, 0)
+        
+        st.write("지름, 둘레, 면적을 선택하세요.")
+        tprik12 = st.slider('지름, 둘레, 면적', 0, 2, 0)
+        
+        st.write("피타고라스 정리를 선택하세요.")
+        tprik13 = st.slider('피타고라스 정리', 0, 2, 0)
+        
+        st.write("반사, 회전을 선택하세요.")
+        tprik14 = st.slider('반사, 회전', 0, 2, 0)
+        
+        st.write("합동과 닮음을 선택하세요.")
+        tprik15 = st.slider('합동과 닮음', 0, 2, 0)
+        
+        st.write("3차원 도형을 선택하세요.")
+        tprik16 = st.slider('3차원 도형', 0, 2, 0)
+        
+        st.write("자료 해석법을 선택하세요.")
+        tprik17 = st.slider('자료 해석법', 0, 2, 0)
+        
+        st.write("자료 수집을 위한 절차를 선택하세요.")
+        tprik18 = st.slider('자료 수집을 위한 절차', 0, 2, 0)
+        
+        st.write("자료의 조직법을 선택하세요.")
+        tprik19 = st.slider('자료의 조직법', 0, 2, 0)
+        
+        st.write("자료 요약통계를 선택하세요.")
+        tprik20 = st.slider('자료 요약통계', 0, 2, 0)
+        
+        st.write("단순한 사건의 확률을 선택하세요.")
+        tprik21 = st.slider('단순한 사건의 확률', 0, 2, 0)
+        
+        st.write("다양한 사건의 확률을 선택하세요.")
+        tprik22 = st.slider('다양한 사건의 확률', 0, 2, 0)
+        
         input_data_others.update({
-            'TPRIK1': st.slider('음수계산', 0, 2, 0),
-            'TPRIK2': st.slider('분수와 소수', 0, 2, 0),
-            'TPRIK3': st.slider('비율과 퍼센트', 0, 2, 0),
-            'TPRIK4': st.slider('대수의 표현', 0, 2, 0),
-            'TPRIK5': st.slider('단순 선형 방정식', 0, 2, 0),
-            'TPRIK6': st.slider('단순 선형 부등식', 0, 2, 0),
-            'TPRIK7': st.slider('연립방정식', 0, 2, 0),
-            'TPRIK8': st.slider('선형/2차 함수 표현', 0, 2, 0),
-            'TPRIK9': st.slider('함수의 특성', 0, 2, 0),
-            'TPRIK10': st.slider('패턴을 표현하는 방법', 0, 2, 0),
-            'TPRIK11': st.slider('각, 평형 모양에 대한 특성', 0, 2, 0),
-            'TPRIK12': st.slider('지름, 둘레, 면적', 0, 2, 0),
-            'TPRIK13': st.slider('피타고라스 정리', 0, 2, 0),
-            'TPRIK14': st.slider('반사, 회전', 0, 2, 0),
-            'TPRIK15': st.slider('합동과 닮음', 0, 2, 0),
-            'TPRIK16': st.slider('3차원 도형', 0, 2, 0),
-            'TPRIK17': st.slider('자료 해석법', 0, 2, 0),
-            'TPRIK18': st.slider('자료 수집을 위한 절차', 0, 2, 0),
-            'TPRIK19': st.slider('자료의 조직법', 0, 2, 0),
-            'TPRIK20': st.slider('자료 요약통계', 0, 2, 0),
-            'TPRIK21': st.slider('단순한 사건의 확률', 0, 2, 0),
-            'TPRIK22': st.slider('다양한 사건의 확률', 0, 2, 0)
+            'TPRIK1': tprik1,
+            'TPRIK2': tprik2,
+            'TPRIK3': tprik3,
+            'TPRIK4': tprik4,
+            'TPRIK5': tprik5,
+            'TPRIK6': tprik6,
+            'TPRIK7': tprik7,
+            'TPRIK8': tprik8,
+            'TPRIK9': tprik9,
+            'TPRIK10': tprik10,
+            'TPRIK11': tprik11,
+            'TPRIK12': tprik12,
+            'TPRIK13': tprik13,
+            'TPRIK14': tprik14,
+            'TPRIK15': tprik15,
+            'TPRIK16': tprik16,
+            'TPRIK17': tprik17,
+            'TPRIK18': tprik18,
+            'TPRIK19': tprik19,
+            'TPRIK20': tprik20,
+            'TPRIK21': tprik21,
+            'TPRIK22': tprik22
         })
-
     with col2:
         st.markdown('<div class="custom-column">', unsafe_allow_html=True)
         # User input sliders for 세부 변수
