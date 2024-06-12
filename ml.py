@@ -346,7 +346,7 @@ def run_ml_app():
         st.markdown(
             """
             <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
-                📝 선생님이 생각하시는 교수학습 방법과 수준을 조정해보면서, 학업성취도와 수학흥미도 예측결과가 변동하는 것을 보며 수업설계를 참조하세요.
+                📝 선생님이 생각하시는 교수학습 방법과 수준을 조정해보면서, 학업성취도와 수학흥미도 예측결과가 변동하는 것을 보며 수업설계를 참조하세요. 🪞Mirror가 예측할 때 놀라지 않게 천천히 움직여주세요. 
             </div>
             """, unsafe_allow_html=True
         )
@@ -819,14 +819,6 @@ def run_ml_app():
             plot_changes(st.session_state.change_history['math_interest'], 'math interest')
         else:
             st.write("모델 2 파일이 존재하지 않습니다. 모델 2 파일을 확인해주세요.")
-
-            st.markdown(
-                """
-                <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; ">
-                    📝 예측결과 해석 주의!
-                </div>
-                """, unsafe_allow_html=True
-            )
 
         if 'scaler_W_loaded' in locals() and 'scaler_z_loaded' in locals():
             input_data_df_model2 = pd.DataFrame([input_data_model2], columns=scaler_W_loaded.feature_names_in_)
