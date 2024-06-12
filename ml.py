@@ -724,24 +724,24 @@ def run_ml_app():
             st.markdown(
                 """
                 <div style="border-radius: 10px; background-color: #f9f9f9; padding: 20px; color: black; width: 200%;">
-                    👀👀 Mirror에서 결과에 미치는 중요한 전략 목록<br>
+                    <strong>👀👀 Mirror에서 결과에 미치는 중요한 전략 목록</strong><br>
                     (중요도 Top 15 순서대로)<br>
                     <ol>
-                        <li>새로운 문제에 스스로 적용하기</li>
-                        <li>학생들에게 지속적으로 질문</li>
-                        <li>기존 지식과 연계하기</li>
-                        <li>학생들을 관찰</li>
-                        <li>수업에서 과제에 대한 토론</li>
-                        <li>과제를 성적에 활용</li>
-                        <li>과제완료 모니터링</li>
-                        <li>법칙, 절차, 사실 외우게 하기</li>
-                        <li>답에 대한 설명</li>
-                        <li>과제에 대한 피드백</li>
-                        <li>짧은 형태의 평가를 활용함</li>
-                        <li>과제 빈도</li>
-                        <li>과제하는 시간</li>
-                        <li>교사의 문제풀이 방법 듣게 하기</li>
-                        <li>반 친구들과 토론하게 하기</li>
+                        <li>🔸새로운 문제에 스스로 적용하기</li>
+                        <li>🔸학생들에게 지속적으로 질문</li>
+                        <li>🔸기존 지식과 연계하기</li>
+                        <li>🔸학생들을 관찰</li>
+                        <li>🔸수업에서 과제에 대한 토론</li>
+                        <li>🔸과제를 성적에 활용</li>
+                        <li>🔸과제완료 모니터링</li>
+                        <li>🔸법칙, 절차, 사실 외우게 하기</li>
+                        <li>🔸답에 대한 설명</li>
+                        <li>🔸과제에 대한 피드백</li>
+                        <li>🔸짧은 형태의 평가를 활용함</li>
+                        <li>🔸과제 빈도</li>
+                        <li>🔸과제하는 시간</li>
+                        <li>🔸교사의 문제풀이 방법 듣게 하기</li>
+                        <li>🔸반 친구들과 토론하게 하기</li>
                     </ol>
                 </div>
                 """, unsafe_allow_html=True
