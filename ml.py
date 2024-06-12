@@ -724,8 +724,8 @@ def run_ml_app():
             st.markdown(
                 """
                 <div style="border-radius: 10px; background-color: #f9f9f9; padding: 20px; color: black;">
-                    <h3>👀👀 Mirror에서 결과에 미치는 중요한 전략 목록</h3>
-                    <h4>(중요도 Top 15 순서대로)</h4>
+                    👀👀 Mirror에서 결과에 미치는 중요한 전략 목록<br>
+                    (중요도 Top 15 순서대로)<br>
                     <ol>
                         <li>새로운 문제에 스스로 적용하기</li>
                         <li>학생들에게 지속적으로 질문</li>
