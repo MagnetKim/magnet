@@ -725,6 +725,7 @@ def run_ml_app():
                     """
                     <div style="border-radius: 10px; background-color: #f9f9f9; padding: 10px; color: black; margin-bottom: 20px; width: 200%;">
                         👀👀 Mirror에서 결과에 미치는 중요한 전략 목록 (중요도 Top 15 순서대로)
+
 - 새로운 문제에 스스로 적용하기
 - 학생들에게 지속적으로 질문
 - 기존 지식과 연계하기
@@ -742,6 +743,7 @@ def run_ml_app():
 - 과제하는 시간
 - 교사의 문제풀이 방법 듣게 하기
 - 반 친구들과 토론하게 하기  
+
                     </div>
                     """, unsafe_allow_html=True
             )
