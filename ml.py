@@ -723,7 +723,7 @@ def run_ml_app():
 
             st.markdown(
                 """
-                <div style="border-radius: 10px; background-color: #f9f9f9; padding: 20px; color: black;">
+                <div style="border-radius: 10px; background-color: #f9f9f9; padding: 20px; color: black; width: 200%;">
                     👀👀 Mirror에서 결과에 미치는 중요한 전략 목록<br>
                     (중요도 Top 15 순서대로)<br>
                     <ol>
